@@ -1,8 +1,8 @@
 (ns boggle.core
-    (:use [clojure.math.numeric-tower :only [abs]]
-          [clojure.java.io :as io])
-    (:require [clojure.string :as string])
-    (:gen-class))
+  (:require [clojure.string :as string]
+            [clojure.java.io :as io]
+            [clojure.math.numeric-tower :refer [abs]])
+  (:gen-class))
 
 (def dict (io/resource "ospd.txt"))
 
