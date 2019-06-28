@@ -1,6 +1,7 @@
 (ns boggle.core-test
   (:require [clojure.test :refer :all]
-            [boggle.core :refer :all]))
+            [boggle.core :refer :all]
+            [boggle.utils]))
 
 (deftest test-valid-word?
     (testing "valid-word?"
@@ -127,3 +128,13 @@
                    [["A" "B" "C"]
                     ["D" "E" "F"]
                     ["P" "QU" "R"]])))))
+
+(deftest test-load-board-from-string
+  (testing "correctly parses a 1-line string into a board matrix"
+    (let [board    (boggle.utils/str->board "abcdefpqr")
+          actual   (load-board board)
+          expected [["A" "B" "C"]
+                    ["D" "E" "F"]
+                    ["P" "QU" "R"]]]
+      (is (= "A B C\nD E F\nP QU R" board))
+      (is (= expected actual)))))
