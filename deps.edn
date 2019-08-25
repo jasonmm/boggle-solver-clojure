@@ -1,0 +1,8 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.8.0"}
+        org.clojure/math.numeric-tower {:mvn/version "0.0.4"}
+        ;org.clojure/tools.namespace {:mvn/verson "0.2.11"}
+        }
+ :aliases {:uberjar {:extra-deps {uberdeps {:mvn/version "0.1.4"}}
+                     :main-opts  ["-m" "uberdeps.uberjar"]}}}
+
